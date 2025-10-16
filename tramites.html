@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio_SGV</title>
+    <title>tramites</title>
     <link rel="stylesheet" href="css/g.style.css">
+    <link rel="stylesheet" href="css/t.style.css">
 </head>
 <body>
     <header>
@@ -12,12 +13,11 @@
             <img src="icons/heart.svg" alt="">
             <h2>Red de voluntarios</h2>
         </div>
-        <nav class="navbar">
+        <nav class="barra-navegacion">
             <a href="index.html">Inicio</a>
-            <a href="cursos.html">Cursos</a>
+            <a href="especialidades.html">Especialidades</a>
             <a href="#tramites.html">Trámites</a>
             <a href="documentacion.html">Documentación</a>
-            <a href="noticias.html">Noticias</a>
             <a href="perfil.html">Perfil</a>
         </nav>
 
@@ -26,20 +26,94 @@
             <div id="searchbox" class="fa-solid fa-magnifying-glass"></div>
         </div>
     </header>
-    <div class="inicio">
-        <div class="inicio-principal">
-            <div class="contenedor-inicio-principal">
-                <h2>Nosotros somos una comunidad</h2>
-                <h1>De personas solidarias y preparadas para un cambio</h1>
-                <p>En este parrafo confieso que me duele la cabeza y un poco el estomago ya que me comi una torta y la verdad tenia mucho picante, en serio mucho picante, mira mira mira uy uy uy como pica</p>
-            </div>
-            <div class="contenedor-inicio-principal">
-                <div class="contenedor-derecho">
-                    <img src="#" alt="" srcset="">
-                </div>
-            </div>
+    <main class="contenido-pagina">
+         <aside class="admin-panel">
+      <h3>Panel de administración</h3>
+      <button id="btn-agregar" class="btn-agregar">
+        <i class="fa-solid fa-plus"></i> Agregar trámite
+      </button>
+    </aside>
+
+    <div id="formulario-panel" class="formulario-panel">
+      <form id="form-tramite" class="formulario">
+        <h2 id="form-titulo">Agregar nuevo trámite</h2>
+        <input type="hidden" id="index-editar">
+
+        <label for="nombre">Nombre del trámite</label>
+        <input type="text" id="nombre" required>
+
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" rows="3" required></textarea>
+
+        <label for="fecha_inicio">Fecha de inicio</label>
+        <input type="date" id="fecha_inicio" required>
+
+        <label for="fecha_corte">Fecha de corte</label>
+        <input type="date" id="fecha_corte" required>
+
+        <div class="requerimientos-admin">
+          <h3>Requerimientos</h3>
+          <div id="lista-requerimientos"></div>
+          <div class="nuevo-requerimiento">
+            <input type="text" id="nuevo-label" placeholder="Campo (ej. CURP)">
+            <select id="nuevo-tipo">
+              <option value="text">Texto</option>
+              <option value="number">Número</option>
+              <option value="file">Archivo</option>
+            </select>
+            <button type="button" id="btn-add-requerimiento">+</button>
+          </div>
         </div>
+
+        <div class="form-buttons">
+          <button type="submit" class="btn-guardar">Guardar</button>
+          <button type="button" id="btn-cerrar" class="btn-cancelar">Cancelar</button>
+        </div>
+      </form>
     </div>
+
+    <section class="tramites">
+      <h1>Trámites disponibles</h1>
+      <div id="lista-tramites" class="lista-tramites">
+        <p class="sin-tramites">No hay trámites registrados.</p>
+      </div>
+    </section>
+
+    <div id="modal-solicitud" class="modal">
+      <div class="modal-contenido">
+        <span class="cerrar-modal" id="cerrar-modal">&times;</span>
+        <h2 id="titulo-solicitud"></h2>
+        <p id="descripcion-solicitud"></p>
+        <p><strong>Inicio:</strong> <span id="inicio-solicitud"></span></p>
+        <p><strong>Corte:</strong> <span id="corte-solicitud"></span></p>
+        <form id="form-solicitud" class="form-solicitud"></form>
+      </div>
+    </div>
+  </main>
+
+    <footer class="footer">
+        <div class="inicio-footer">
+        <div class="contenedor-inicio-footer">
+            <h2>Contacto soporte: <br><span>Bryan Hernández Solís</span></h2>
+            <a href="#">Teléfono</a>
+            <a href="#">Correo</a>
+            <a href="#">Dirección</a>
+        </div>
+        <div class="contenedor-inicio-footer">
+            <h2>Contacto soporte: <br><span>Brandon Rodríguez Gutiérrez</span></h2>
+            <a href="#">Teléfono</a>
+            <a href="#">Correo</a>
+            <a href="#">Dirección</a>
+        </div>
+        <div class="contenedor-inicio-footer">
+            <h2>Contacto soporte: <br><span>Carlos Daniel Pardo Viramontes</span></h2>
+            <a href="#">Teléfono</a>
+            <a href="#">Correo</a>
+            <a href="#">Dirección</a>
+        </div>
+        </div>
+    </footer>
+    <script src="scripts/t.script.js"></script>
     <script src="scripts/g.script.js"></script>
     <script src="https://kit.fontawesome.com/910c92f415.js" crossorigin="anonymous"></script>
 </body>
