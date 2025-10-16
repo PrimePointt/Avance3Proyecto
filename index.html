@@ -1,91 +1,174 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio_RVS</title>
-    <link rel="stylesheet" href="css/g.style.css">
-    <link rel="stylesheet" href="css/i.style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio_RVS</title>
+
+  <link rel="stylesheet" href="css/g.style.css" />
+
+  <link rel="stylesheet" href="css/i.style.css" />
 </head>
+
 <body>
-    <header>
-        
-        <div class="logo">
-            <img src="icons/heart.svg" alt="">
-            <h2>Red de voluntarios</h2>
-        </div>
-    
-        <nav class="barra-navegacion">
-            <a href="#index.html">Inicio</a>
-            <a href="cursos.html">Cursos</a>
-            <a href="tramites.html">Trámites</a>
-            <a href="documentacion.html">Documentación</a>
-            <a href="noticias.html">Noticias</a>
-            <a href="perfil.html">Perfil</a>
-        </nav>
+  <header>
+    <div class="logo">
+      <img src="icons/heart.svg" alt="">
+      <h2>Red de voluntarios</h2>
+    </div>
 
-        <div class="menu-icons">
-            <div id="menu-bar" class="fa-solid fa-bars"></div>
-            <div id="searchbox" class="fa-solid fa-magnifying-glass"></div>
+    <nav class="barra-navegacion">
+      <a href="index.html">Inicio</a>
+      <a href="especialidades.html">Especialidades</a>
+      <a href="tramites.html">Trámites</a>
+      <a href="documentacion.html">Documentación</a>
+      <a href="perfil.html">Perfil</a>
+    </nav>
+
+    <div class="menu-icons">
+      <div id="notify" class="fa-solid fa-bell" style="color: #ffffff;"></div>
+      <div id="menu-bar" class="fa-solid fa-bars"></div>
+      <div id="user" class="fa-solid fa-user" style="color: #ffffff;"></div>
+    </div>
+  </header>
+
+  <main class="contenido-pagina">
+
+    <!-- Sección de inicio -->
+    <section class="inicio">
+      <div class="inicio-principal">
+        <div class="contenedor-inicio-principal">
+          <h2>Somos comunidad de <span>solidaridad</span></h2>
+          <h1>Personas <span>preparadas</span>, unidas para el cambio</h1>
+          <p>
+            En Red de Voluntarios promovemos la participación ciudadana, la ayuda comunitaria y el fortalecimiento del tejido social. Queremos inspirar esperanza y generar impacto positivo en quienes más lo necesitan.
+          </p>
         </div>
-    </header>
-    <div class="inicio">
+        <div class="contenedor-inicio-principal">
+          <div class="contenedor-derecho">
+            <img src="img/voluntarios.png" alt="Voluntarios colaborando">
+          </div>
+        </div>
         <div class="inicio-abajo">
-            <img src="img/fondo-voluntariado.png" alt="" srcset="">
-        </div>
-        <div class="inicio-principal">
-            <div class="contenedor-inicio-principal">
-                <h2>Nosotros somos una comunidad</h2>
-                <h1>De personas solidarias y preparadas para un cambio</h1>
-                <p>En este parrafo confieso que me duele la cabeza y un poco el estomago ya que me comi una torta y la verdad tenia mucho picante, en serio mucho picante, mira mira mira uy uy uy como pica</p>
-            </div>
-            <div class="contenedor-inicio-principal">
-                <div class="contenedor-derecho">
-                    <img src="img/voluntarios.png" alt="" srcset="">
-                </div>
-            </div>
-        </div>
-    </div>
+        <img src="img/fondo-voluntariado.png" alt="Fondo manos voluntariado">
+      </div>
+      </div>
+    </section>
 
-    <div class="preview-cursos">
-        <div class="cursos-encabezado">
-            <h1>Nuestros <span>Cursos</span></h1>
-        </div>
-        <div class="menu-cursos">
-            <div class="menu-principal-cursos">
-                <div class="cursos-imagenes">
-                    <img src="img/principal.jpg" alt="" srcset="">
-                </div>
+<!-- Sección Carrusel + Reseña en dos columnas -->
+    <section class="presentacion">
+    <div class="presentacion-contenido">
+        <!-- Carrusel (lado izquierdo) -->
+        <div class="presentacion-carrusel">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+            <img src="img/carrusel1.jpg" alt="Voluntario 1">
+            <img src="img/carrusel2.jpeg" alt="Voluntario 2">
+            <img src="img/carrusel3.jpeg" alt="Voluntario 3">
+            <img src="img/carrusel4.jpg" alt="Voluntario 4">
+            <img src="img/carrusel5.jpeg" alt="Voluntario 5">
             </div>
+            <button class="carousel-btn prev">&#10094;</button>
+            <button class="carousel-btn next">&#10095;</button>
+        </div>
         </div>
 
-
-    </div>
-
-    <div class="footer">
-        <div class="inicio-footer">
-            <div class="contenedor-inicio-footer">
-                <h2>Contacto soporte: Bryan Hernández Solís</h2>
-                <a href="#">Telefono</a>
-                <a href="#">Correo</a>
-                <a href="#">Dirección</a>
-            </div>
-            <div class="contenedor-inicio-footer">
-                <h2>Contacto soporte: Brandon Rodríguez Gutiérrez</h2>
-                <a href="#">Telefono</a>
-                <a href="#">Correo</a>
-                <a href="#">Dirección</a>
-            </div>
-            <div class="contenedor-inicio-footer">
-                <h2>Contacto soporte: Carlos Daniel Pardo Viramontes</h2>
-                <a href="#">Telefono</a>
-                <a href="#">Correo</a>
-                <a href="#">Dirección</a>
-            </div>
+        <!-- Texto ¿Qué es Red de Voluntarios? (lado derecho) -->
+        <div class="presentacion-texto">
+        <h2>¿Qué es Red de Voluntarios?</h2>
+        <p>
+            Red de Voluntarios es una comunidad dedicada a conectar personas solidarias
+            con proyectos sociales, educativos y humanitarios. Nuestro propósito es
+            fortalecer el tejido social mediante la colaboración, el aprendizaje y la
+            acción comunitaria.
+        </p>
+        <p>
+            A través de programas de capacitación, campañas de apoyo y actividades
+            sociales, brindamos herramientas para transformar realidades y mejorar la
+            calidad de vida de las comunidades más vulnerables.
+        </p>
         </div>
     </div>
+    </section>
 
-    <script src="scripts/g.script.js"></script>
-    <script src="https://kit.fontawesome.com/910c92f415.js" crossorigin="anonymous"></script>
+
+    <!-- Misión y Visión -->
+    <section class="mis-vis">
+      <div class="mision">
+        <h3>Misión</h3>
+        <p>
+          Promover la cultura del voluntariado y fortalecer proyectos comunitarios que generen bienestar social, mediante capacitación, coordinación y apoyo técnico.
+        </p>
+      </div>
+      <div class="vision">
+        <h3>Visión</h3>
+        <p>
+          Ser una red referente nacional de voluntariado, reconocida por su impacto sostenible, transparencia y capacidad de movilización ciudadana.
+        </p>
+      </div>
+    </section>
+
+    <!-- Objetivos -->
+    <section class="objetivos">
+      <h2>Objetivos</h2>
+      <ul>
+        <li>Capacitar a voluntarios con habilidades y valores éticos.</li>
+        <li>Fomentar alianzas entre organizaciones y comunidades.</li>
+        <li>Brindar apoyo en proyectos sociales con enfoque integral.</li>
+        <li>Incrementar la participación ciudadana en acciones comunitarias.</li>
+      </ul>
+    </section>
+
+    <!-- A quién ayuda / Impacto -->
+    <section class="impacto">
+      <h2>¿A quién ayudamos?</h2>
+      <p>
+        Nuestro trabajo se dirige a comunidades vulnerables, zonas rurales, grupos con escasos recursos, adultos mayores, personas en situación de riesgo y organizaciones sociales que requieren acompañamiento para potenciar su impacto.
+      </p>
+    </section>
+
+    <!-- 
+    <section class="preview-cursos">
+      <div class="cursos-encabezado">
+        <h1>Nuestros <span>Cursos</span></h1>
+      </div>
+      <div class="menu-cursos">
+        <div class="menu-principal-cursos">
+          <div class="cursos-imagenes">
+            <img src="img/principal.jpg" alt="Curso destacado">
+          </div>
+        </div>
+      </div>
+    </section>
+-->
+
+  </main>
+
+  <footer class="footer">
+    <div class="inicio-footer">
+      <div class="contenedor-inicio-footer">
+        <h2>Contacto soporte: <br><span>Bryan Hernández Solís</span></h2>
+        <a href="#">Teléfono</a>
+        <a href="#">Correo</a>
+        <a href="#">Dirección</a>
+      </div>
+      <div class="contenedor-inicio-footer">
+        <h2>Contacto soporte: <br><span>Brandon Rodríguez Gutiérrez</span></h2>
+        <a href="#">Teléfono</a>
+        <a href="#">Correo</a>
+        <a href="#">Dirección</a>
+      </div>
+      <div class="contenedor-inicio-footer">
+        <h2>Contacto soporte: <br><span>Carlos Daniel Pardo Viramontes</span></h2>
+        <a href="#">Teléfono</a>
+        <a href="#">Correo</a>
+        <a href="#">Dirección</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/g.script.js"></script>
+  <script src="scripts/i.script.js"></script>
+  <script src="https://kit.fontawesome.com/910c92f415.js" crossorigin="anonymous"></script>
 </body>
 </html>
