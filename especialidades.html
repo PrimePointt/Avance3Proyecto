@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especialidades</title>
+    <link rel="stylesheet" href="css/g.style.css">
+    <link rel="stylesheet" href="css/e.style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="icons/heart.svg" alt="">
+            <h2>Red de voluntarios</h2>
+        </div>
+        <nav class="barra-navegacion">
+            <a href="index.html">Inicio</a>
+            <a href="#especialidades.html">Especialidades</a>
+            <a href="tramites.html">Trámites</a>
+            <a href="documentacion.html">Documentación</a>
+            <a href="perfil.html">Perfil</a>
+        </nav>
+
+        <div class="menu-icons">
+            <div id="menu-bar" class="fa-solid fa-bars"></div>
+            <div id="searchbox" class="fa-solid fa-magnifying-glass"></div>
+        </div>
+    </header>
+  <main class="contenido-pagina">
+
+ <main class="contenido-pagina">
+
+  <aside class="admin-panel">
+    <h3>Panel de administración</h3>
+    <button id="btn-agregar" class="btn-agregar">
+      <i class="fa-solid fa-plus"></i> Agregar especialidad
+    </button>
+  </aside>
+
+  <div id="formulario-panel" class="formulario-panel">
+    <form id="form-especialidad" class="formulario">
+      <h2 id="form-titulo">Agregar nueva especialidad</h2>
+      <input type="hidden" id="index-editar">
+
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" required>
+
+      <label for="descripcion">Descripción</label>
+      <textarea id="descripcion" rows="3" required></textarea>
+
+      <label for="fecha_apertura">Fecha de apertura</label>
+      <input type="date" id="fecha_apertura" required>
+
+      <label for="fecha_cierre">Fecha de cierre</label>
+      <input type="date" id="fecha_cierre" required>
+
+      <div class="requerimientos-admin">
+        <h3>Requerimientos</h3>
+        <div id="lista-requerimientos"></div>
+        <div class="nuevo-requerimiento">
+          <input type="text" id="nuevo-label" placeholder="Nombre del campo (ej. Edad)">
+          <select id="nuevo-tipo">
+            <option value="text">Texto</option>
+            <option value="number">Número</option>
+            <option value="file">Archivo</option>
+          </select>
+          <button type="button" id="btn-add-requerimiento">+</button>
+        </div>
+      </div>
+
+      <div class="form-buttons">
+        <button type="submit" class="btn-guardar">Guardar</button>
+        <button type="button" id="btn-cerrar" class="btn-cancelar">Cancelar</button>
+      </div>
+    </form>
+  </div>
+
+  <section class="especialidades">
+    <h1>Especialidades disponibles</h1>
+    <div id="lista-especialidades" class="lista-especialidades">
+      <p class="sin-cursos">No hay especialidades registradas.</p>
+    </div>
+  </section>
+
+  <div id="modal-inscripcion" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar-modal" id="cerrar-modal">&times;</span>
+      <h2 id="titulo-inscripcion"></h2>
+      <p id="descripcion-inscripcion"></p>
+      <p><strong>Inicio:</strong> <span id="inicio-inscripcion"></span></p>
+      <p><strong>Cierre:</strong> <span id="cierre-inscripcion"></span></p>
+      <form id="form-inscripcion" class="form-inscripcion"></form>
+    </div>
+  </div>
+</main>
+
+  </main>
+  <footer class="footer">
+    <div class="inicio-footer">
+      <div class="contenedor-inicio-footer">
+        <h2>Contacto soporte: <br><span>Bryan Hernández Solís</span></h2>
+        <a href="#">Teléfono</a>
+        <a href="#">Correo</a>
+        <a href="#">Dirección</a>
+      </div>
+      <div class="contenedor-inicio-footer">
+        <h2>Contacto soporte: <br><span>Brandon Rodríguez Gutiérrez</span></h2>
+        <a href="#">Teléfono</a>
+        <a href="#">Correo</a>
+        <a href="#">Dirección</a>
+      </div>
+      <div class="contenedor-inicio-footer">
+        <h2>Contacto soporte: <br><span>Carlos Daniel Pardo Viramontes</span></h2>
+        <a href="#">Teléfono</a>
+        <a href="#">Correo</a>
+        <a href="#">Dirección</a>
+      </div>
+    </div>
+  </footer>
+  <script src="scripts/e.script.js"></script>
+    <script src="scripts/g.script.js"></script>
+    <script src="https://kit.fontawesome.com/910c92f415.js" crossorigin="anonymous"></script>
+</body>
+</html>
