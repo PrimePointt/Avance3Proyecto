@@ -115,3 +115,8 @@
 
 .btn-eliminar { background: #b60000; }
 .btn-descargar { background: var(--color); }
+
+footer {
+  position: relative;
+  z-index: 0;
+}

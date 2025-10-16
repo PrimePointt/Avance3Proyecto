@@ -1,16 +1,17 @@
 .contenido-pagina {
   display: flex;
   background: var(--light-bg);
-  min-height: 100vh;
-  padding-top: 9rem;
+  min-height: calc(100vh - 100px);
+  padding-top: 8rem;
 }
 
 .admin-panel {
   background: var(--color);
   color: var(--white);
   width: 250px;
-  padding: 2rem;
+  padding: 2rem 1rem;
   position: fixed;
+  flex-shrink: 0;
   top: 7rem;
   bottom: 0;
   box-shadow: var(--shadow);
@@ -157,4 +158,9 @@
   font-size: 2rem;
   cursor: pointer;
   color: var(--color);
+}
+
+footer {
+  position: relative;
+  z-index: 0;
 }

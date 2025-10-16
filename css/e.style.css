@@ -274,6 +274,10 @@
   cursor: pointer;
 }
 
+footer {
+  position: relative;
+  z-index: 0;
+}
 
 @media (max-width: 768px) {
   .admin-panel {
