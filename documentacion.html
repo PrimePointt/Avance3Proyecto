@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio_SGV</title>
+    <title>Documentación</title>
     <link rel="stylesheet" href="css/g.style.css">
+    <link rel="stylesheet" href="css/d.style.css">
 </head>
 <body>
     <header>
@@ -12,12 +13,11 @@
             <img src="icons/heart.svg" alt="">
             <h2>Red de voluntarios</h2>
         </div>
-        <nav class="navbar">
+        <nav class="barra-navegacion">
             <a href="index.html">Inicio</a>
-            <a href="cursos.html">Cursos</a>
+            <a href="especialidades.html">Especialidades</a>
             <a href="tramites.html">Trámites</a>
             <a href="#documentacion.html">Documentación</a>
-            <a href="noticias.html">Noticias</a>
             <a href="perfil.html">Perfil</a>
         </nav>
 
@@ -26,20 +26,68 @@
             <div id="searchbox" class="fa-solid fa-magnifying-glass"></div>
         </div>
     </header>
-    <div class="inicio">
-        <div class="inicio-principal">
-            <div class="contenedor-inicio-principal">
-                <h2>Nosotros somos una comunidad</h2>
-                <h1>De personas solidarias y preparadas para un cambio</h1>
-                <p>En este parrafo confieso que me duele la cabeza y un poco el estomago ya que me comi una torta y la verdad tenia mucho picante, en serio mucho picante, mira mira mira uy uy uy como pica</p>
-            </div>
-            <div class="contenedor-inicio-principal">
-                <div class="contenedor-derecho">
-                    <img src="#" alt="" srcset="">
-                </div>
-            </div>
+
+    <main class="contenido-pagina">
+
+    <aside class="admin-panel">
+      <h3>Panel de administración</h3>
+      <button id="btn-agregar" class="btn-agregar">
+        <i class="fa-solid fa-plus"></i> Agregar documento
+      </button>
+    </aside>
+
+    <div id="formulario-panel" class="formulario-panel">
+      <form id="form-documento" class="formulario">
+        <h2 id="form-titulo">Agregar nuevo documento</h2>
+        <input type="hidden" id="index-editar">
+
+        <label for="titulo">Título del documento</label>
+        <input type="text" id="titulo" required>
+
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" rows="3"></textarea>
+
+        <label for="archivo">Seleccionar archivo</label>
+        <input type="file" id="archivo" accept=".pdf,.doc,.docx" required>
+
+        <div class="form-buttons">
+          <button type="submit" class="btn-guardar">Guardar</button>
+          <button type="button" id="btn-cerrar" class="btn-cancelar">Cancelar</button>
         </div>
+      </form>
     </div>
+
+    <section class="documentos">
+      <h1>Documentos disponibles</h1>
+      <div id="lista-documentos" class="lista-documentos">
+        <p class="sin-documentos">No hay documentos registrados.</p>
+      </div>
+    </section>
+    </main>
+
+    <footer class="footer">
+        <div class="inicio-footer">
+        <div class="contenedor-inicio-footer">
+            <h2>Contacto soporte: <br><span>Bryan Hernández Solís</span></h2>
+            <a href="#">Teléfono</a>
+            <a href="#">Correo</a>
+            <a href="#">Dirección</a>
+        </div>
+        <div class="contenedor-inicio-footer">
+            <h2>Contacto soporte: <br><span>Brandon Rodríguez Gutiérrez</span></h2>
+            <a href="#">Teléfono</a>
+            <a href="#">Correo</a>
+            <a href="#">Dirección</a>
+        </div>
+        <div class="contenedor-inicio-footer">
+            <h2>Contacto soporte: <br><span>Carlos Daniel Pardo Viramontes</span></h2>
+            <a href="#">Teléfono</a>
+            <a href="#">Correo</a>
+            <a href="#">Dirección</a>
+        </div>
+        </div>
+    </footer>
+    <script src="scripts/d.script.js"></script>
     <script src="scripts/g.script.js"></script>
     <script src="https://kit.fontawesome.com/910c92f415.js" crossorigin="anonymous"></script>
 </body>
