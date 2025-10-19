@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let tramites = JSON.parse(localStorage.getItem("tramites")) || [];
   let requerimientosTemp = [];
 
+  if(btnAgregar){
   btnAgregar.addEventListener("click", () => {
     form.reset();
     indexEditar.value = "";
@@ -27,11 +28,15 @@ document.addEventListener("DOMContentLoaded", () => {
     requerimientosTemp = [];
     panel.classList.add("active");
   });
+  }
 
+  if(btnCerrar){
   btnCerrar.addEventListener("click", () => {
     panel.classList.remove("active");
   });
+  }
 
+  if(btnAddReq){
   btnAddReq.addEventListener("click", () => {
     const label = nuevoLabel.value.trim();
     const tipo = nuevoTipo.value;
@@ -45,7 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     nuevoLabel.value = "";
   });
+  }
 
+  if(form){
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -66,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     panel.classList.remove("active");
     form.reset();
   });
+  }
 
   function renderTramites() {
     lista.innerHTML = "";
@@ -77,26 +85,38 @@ document.addEventListener("DOMContentLoaded", () => {
     tramites.forEach((t, i) => {
       const card = document.createElement("div");
       card.classList.add("tramite-card");
+
+      let adminButtons='';
+
+      if(typeof CAN_EDIT_CARDS !== 'undefined' && CAN_EDIT_CARDS){
+        adminButtons=`
+          <button class="btn-editar" data-i="${i}"><i class="fa-solid fa-pen"></i> Editar</button>
+          <button class="btn-eliminar" data-i="${i}"><i class="fa-solid fa-trash"></i> Eliminar</button>
+        `;
+      }
       card.innerHTML = `
         <h3><i class="fa-solid fa-file-pen"></i> ${t.nombre}</h3>
         <p><strong>Descripción:</strong> ${t.descripcion}</p>
         <p><strong>Inicio:</strong> ${t.inicio}</p>
         <p><strong>Corte:</strong> ${t.corte}</p>
         <div class="acciones-card">
-          <button class="btn-editar" data-i="${i}"><i class="fa-solid fa-pen"></i> Editar</button>
-          <button class="btn-eliminar" data-i="${i}"><i class="fa-solid fa-trash"></i> Eliminar</button>
+          ${adminButtons}
           <button class="btn-solicitar" data-i="${i}"><i class="fa-solid fa-file-signature"></i> Solicitar</button>
         </div>
       `;
       lista.appendChild(card);
     });
-
-    document.querySelectorAll(".btn-eliminar").forEach(b => b.onclick = eliminar);
-    document.querySelectorAll(".btn-editar").forEach(b => b.onclick = editar);
     document.querySelectorAll(".btn-solicitar").forEach(b => b.onclick = solicitar);
+
+    if(typeof CAN_EDIT_CARDS !== 'undefined' && CAN_EDIT_CARDS){
+      document.querySelectorAll(".btn-eliminar").forEach(b => b.onclick = eliminar);
+      document.querySelectorAll(".btn-editar").forEach(b => b.onclick = editar);
+    }
   }
 
   function editar(e) {
+    if(!form || !panel || !formTitulo || !listaRequerimientos) return;
+
     const i = e.target.closest("button").dataset.i;
     const t = tramites[i];
     indexEditar.value = i;

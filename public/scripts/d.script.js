@@ -8,18 +8,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const indexEditar = document.getElementById("index-editar");
 
   let documentos = JSON.parse(localStorage.getItem("documentos")) || [];
+ 
+  if(btnAgregar){
+    btnAgregar.addEventListener("click", () => {
+      form.reset();
+      indexEditar.value = "";
+      formTitulo.textContent = "Agregar nuevo documento";
+      panel.classList.add("active");
+    });
+  }
 
-  btnAgregar.addEventListener("click", () => {
-    form.reset();
-    indexEditar.value = "";
-    formTitulo.textContent = "Agregar nuevo documento";
-    panel.classList.add("active");
-  });
-
+  if(btnCerrar){
   btnCerrar.addEventListener("click", () => {
     panel.classList.remove("active");
   });
+  }
 
+  if(form){
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -45,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     reader.readAsDataURL(archivo);
   });
+  }
 
   function renderDocumentos() {
     lista.innerHTML = "";
@@ -56,23 +62,29 @@ document.addEventListener("DOMContentLoaded", () => {
     documentos.forEach((doc, i) => {
       const card = document.createElement("div");
       card.classList.add("documento-card");
+
+      let adminButtons ='';
+
+      if(typeof CAN_EDIT_CARDS !== 'undefined' && CAN_EDIT_CARDS){
+        adminButtons =`
+          <button class= "btn-eliminar" data-i="${i}"><i class = "fa-solid fa-trash"></i> Eliminar</button>
+        `;
+      }
       card.innerHTML = `
         <h3><i class="fa-solid fa-file"></i> ${doc.titulo}</h3>
         <p>${doc.descripcion || "Sin descripción"}</p>
         <p><strong>Archivo:</strong> ${doc.nombreArchivo}</p>
         <div class="acciones-card">
-          <a href="${doc.contenido}" download="${doc.nombreArchivo}" class="btn-descargar">
-            <i class="fa-solid fa-download"></i> Descargar
-          </a>
-          <button class="btn-eliminar" data-i="${i}">
-            <i class="fa-solid fa-trash"></i> Eliminar
-          </button>
+          ${adminButtons}
+          <a href="${doc.contenido}" download="${doc.nombreArchivo}" class="btn-descargar"><i class="fa-solid fa-download"></i> Descargar</a>
         </div>
       `;
       lista.appendChild(card);
     });
 
-    document.querySelectorAll(".btn-eliminar").forEach(b => b.onclick = eliminar);
+    if(typeof CAN_EDIT_CARDS !== 'undefined' && CAN_EDIT_CARDS){
+      document.querySelectorAll(".btn-eliminar").forEach(b => b.onclick = eliminar);
+    }
   }
 
   function eliminar(e) {

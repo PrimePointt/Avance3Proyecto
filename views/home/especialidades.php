@@ -1,32 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Especialidades</title>
-    <link rel="stylesheet" href="css/g.style.css">
-    <link rel="stylesheet" href="css/e.style.css">
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <img src="icons/heart.svg" alt="">
-            <h2>Red de voluntarios</h2>
-        </div>
-        <nav class="barra-navegacion">
-            <a href="index.html">Inicio</a>
-            <a href="#especialidades.html">Especialidades</a>
-            <a href="tramites.html">Trámites</a>
-            <a href="documentacion.html">Documentación</a>
-        </nav>
+<?php $base_url = '/ProyectoSGV/'; ?>
+<?php if (isset($ver_cont_gest) && $ver_cont_gest): ?>
 
-        <div class="menu-icons">
-            <a href="notificaciones.html"><div id="notify" class="fa-solid fa-bell" style="color: #ffffff;"></div></a>
-            <div id="menu-bar" class="fa-solid fa-bars"></div>
-            <a href="perfil.html"><div id="user" class="fa-solid fa-user" style="color: #ffffff;"></div></a>
-        </div>
-    </header>
-  <main class="contenido-pagina">
 
   <aside class="admin-panel">
     <h3>Panel de administración</h3>
@@ -72,8 +46,12 @@
       </div>
     </form>
   </div>
+  <?php endif; ?>
 
-  <section class="especialidades">
+  <?php 
+  $especialidades_style = (isset($ver_cont_gest) && $ver_cont_gest) ? '' : 'style="margin-left: 0;"';
+  ?>
+  <section class="especialidades" <?php echo $especialidades_style; ?>>
     <h1>Especialidades disponibles</h1>
     <div id="lista-especialidades" class="lista-especialidades">
       <p class="sin-cursos">No hay especialidades registradas.</p>
@@ -90,33 +68,6 @@
       <form id="form-inscripcion" class="form-inscripcion"></form>
     </div>
   </div>
-</main>
-
-  <footer class="footer">
-    <div class="inicio-footer">
-      <div class="contenedor-inicio-footer">
-        <h2>Contacto soporte: <br><span>Bryan Hernández Solís</span></h2>
-        <a href="#">Teléfono</a>
-        <a href="#">Correo</a>
-        <a href="#">Dirección</a>
-      </div>
-      <div class="contenedor-inicio-footer">
-        <h2>Contacto soporte: <br><span>Brandon Rodríguez Gutiérrez</span></h2>
-        <a href="#">Teléfono</a>
-        <a href="#">Correo</a>
-        <a href="#">Dirección</a>
-      </div>
-      <div class="contenedor-inicio-footer">
-        <h2>Contacto soporte: <br><span>Carlos Daniel Pardo Viramontes</span></h2>
-        <a href="#">Teléfono</a>
-        <a href="#">Correo</a>
-        <a href="#">Dirección</a>
-      </div>
-    </div>
-  </footer>
-    <script src="scripts/campa.script.js"></script>
-    <script src="scripts/e.script.js"></script>
-    <script src="scripts/g.script.js"></script>
-    <script src="https://kit.fontawesome.com/910c92f415.js" crossorigin="anonymous"></script>
-</body>
-</html>
+<script>
+    const CAN_EDIT_CARDS = <?php echo (isset($ver_card_edit) && $ver_card_edit) ? 'true' : 'false'; ?>;
+</script>

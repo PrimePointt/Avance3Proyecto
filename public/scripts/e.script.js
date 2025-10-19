@@ -19,57 +19,63 @@ document.addEventListener("DOMContentLoaded", () => {
   let especialidades = JSON.parse(localStorage.getItem("especialidades")) || [];
   let requerimientosTemp = [];
 
-  btnAgregar.addEventListener("click", () => {
-    form.reset();
-    indexEditar.value = "";
-    formTitulo.textContent = "Agregar nueva especialidad";
-    listaRequerimientos.innerHTML = "";
-    requerimientosTemp = [];
-    panel.classList.add("active");
-  });
+  if(btnAgregar){
+    btnAgregar.addEventListener("click", () => {
+      form.reset();
+      indexEditar.value = "";
+      formTitulo.textContent = "Agregar nueva especialidad";
+      listaRequerimientos.innerHTML = "";
+      requerimientosTemp = [];
+      panel.classList.add("active");
+    });
+  }
+  if(btnCerrar){
+    btnCerrar.addEventListener("click", () => {
+      panel.classList.remove("active");
+      form.reset();
+    });
+  }
+  if(btnAddReq){
+    btnAddReq.addEventListener("click", () => {
+      const label = nuevoLabel.value.trim();
+      const tipo = nuevoTipo.value;
 
-  btnCerrar.addEventListener("click", () => {
-    panel.classList.remove("active");
-    form.reset();
-  });
+      if (!label) return;
 
-  btnAddReq.addEventListener("click", () => {
-    const label = nuevoLabel.value.trim();
-    const tipo = nuevoTipo.value;
+      const req = { label, tipo };
+      requerimientosTemp.push(req);
 
-    if (!label) return;
+      const div = document.createElement("div");
+      div.textContent = `${label} (${tipo})`;
+      listaRequerimientos.appendChild(div);
 
-    const req = { label, tipo };
-    requerimientosTemp.push(req);
+      nuevoLabel.value = "";
+    });
+  }
 
-    const div = document.createElement("div");
-    div.textContent = `${label} (${tipo})`;
-    listaRequerimientos.appendChild(div);
+  if(form){
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-    nuevoLabel.value = "";
-  });
+      const data = {
+        nombre: form.nombre.value,
+        descripcion: form.descripcion.value,
+        apertura: form.fecha_apertura.value,
+        cierre: form.fecha_cierre.value,
+        requerimientos: requerimientosTemp
+      };
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+      const index = indexEditar.value;
+      if (index === "") especialidades.push(data);
+      else especialidades[index] = data;
 
-    const data = {
-      nombre: form.nombre.value,
-      descripcion: form.descripcion.value,
-      apertura: form.fecha_apertura.value,
-      cierre: form.fecha_cierre.value,
-      requerimientos: requerimientosTemp
-    };
-
-    const index = indexEditar.value;
-    if (index === "") especialidades.push(data);
-    else especialidades[index] = data;
-
-    localStorage.setItem("especialidades", JSON.stringify(especialidades));
-    renderEspecialidades();
-    panel.classList.remove("active");
-    form.reset();
-  });
-
+      localStorage.setItem("especialidades", JSON.stringify(especialidades));
+      renderEspecialidades();
+      panel.classList.remove("active");
+      form.reset();
+    });
+  }
+  
   function renderEspecialidades() {
     lista.innerHTML = "";
     if (especialidades.length === 0) {
@@ -80,26 +86,38 @@ document.addEventListener("DOMContentLoaded", () => {
     especialidades.forEach((esp, i) => {
       const card = document.createElement("div");
       card.classList.add("curso-card");
+
+      let adminButtons = '';
+
+      if(typeof CAN_EDIT_CARDS !== 'undefined' && CAN_EDIT_CARDS){
+        adminButtons= `
+          <button class="btn-editar" data-i="${i}"><i class = "fa-solid fa-pen"></i> Editar</button>
+          <button class="btn-eliminar" data-i="${i}"><i class = "fa-solid fa-trash"></i> Eliminar</button>
+        `;
+      }
       card.innerHTML = `
-        <h3>${esp.nombre}</h3>
+        <h3><i class="fa-solid fa-hands-holding-child"></i>${esp.nombre}</h3>
         <p><strong>Descripción:</strong> ${esp.descripcion}</p>
         <p><strong>Apertura:</strong> ${esp.apertura}</p>
         <p><strong>Cierre:</strong> ${esp.cierre}</p>
         <div class="acciones-card">
-          <button class="btn-editar" data-i="${i}"><i class="fa-solid fa-pen"></i> Editar</button>
-          <button class="btn-eliminar" data-i="${i}"><i class="fa-solid fa-trash"></i> Eliminar</button>
+          ${adminButtons}
           <button class="btn-inscribirse" data-i="${i}"><i class="fa-solid fa-user-plus"></i> Inscribirse</button>
         </div>
       `;
       lista.appendChild(card);
     });
-
-    document.querySelectorAll(".btn-eliminar").forEach(b => b.onclick = e => eliminar(e));
-    document.querySelectorAll(".btn-editar").forEach(b => b.onclick = e => editar(e));
     document.querySelectorAll(".btn-inscribirse").forEach(b => b.onclick = e => inscribirse(e));
+
+    if(typeof CAN_EDIT_CARDS !== 'undefined' && CAN_EDIT_CARDS){
+        document.querySelectorAll(".btn-eliminar").forEach(b => b.onclick = e => eliminar(e));
+        document.querySelectorAll(".btn-editar").forEach(b => b.onclick = e => editar(e));
+    }
   }
 
   function editar(e) {
+    if(!form || !panel || !formTitulo || !listaRequerimientos) return;
+
     const i = e.target.closest("button").dataset.i;
     const esp = especialidades[i];
     indexEditar.value = i;
