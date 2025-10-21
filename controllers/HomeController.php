@@ -5,7 +5,7 @@ class HomeController
 
     public function __construct()
     {
-        $this->user_role = 3;
+        $this->user_role = 4;
     }
 
     public function index()

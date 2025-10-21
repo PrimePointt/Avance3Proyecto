@@ -12,11 +12,11 @@
         </div>
         <div class="contenedor-inicio-principal">
           <div class="contenedor-derecho">
-            <img src="img/voluntarios.png" alt="Voluntarios colaborando">
+            <img src="/ProyectoSGV/public/img/voluntarios.png" alt="Voluntarios colaborando">
           </div>
         </div>
         <div class="inicio-abajo">
-        <img src="img/fondo-voluntariado.png" alt="Fondo manos voluntariado">
+        <img src="/ProyectoSGV/public/img/fondo-voluntariado.png" alt="Fondo manos voluntariado">
       </div>
       </div>
     </section>
@@ -28,11 +28,11 @@
         <div class="presentacion-carrusel">
         <div class="carousel-container">
             <div class="carousel-slide">
-            <img src="img/carrusel1.jpg" alt="Voluntario 1">
-            <img src="img/carrusel2.jpeg" alt="Voluntario 2">
-            <img src="img/carrusel3.jpeg" alt="Voluntario 3">
-            <img src="img/carrusel4.jpg" alt="Voluntario 4">
-            <img src="img/carrusel5.jpeg" alt="Voluntario 5">
+            <img src="/ProyectoSGV/public/img/carrusel1.jpg" alt="Voluntario 1">
+            <img src="/ProyectoSGV/public/img/carrusel2.jpeg" alt="Voluntario 2">
+            <img src="/ProyectoSGV/public/img/carrusel3.jpeg" alt="Voluntario 3">
+            <img src="/ProyectoSGV/public/img/carrusel4.jpg" alt="Voluntario 4">
+            <img src="/ProyectoSGV/public/img/carrusel5.jpeg" alt="Voluntario 5">
             </div>
             <button class="carousel-btn prev">&#10094;</button>
             <button class="carousel-btn next">&#10095;</button>
