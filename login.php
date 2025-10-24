@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 
     if ($resultado['success']) {
         $_SESSION['user'] = $resultado['user'];
+        $_SESSION['voluntarioId'] = $resultado['user']['id'];
         header('Location: index.php');
         exit;
     } else {

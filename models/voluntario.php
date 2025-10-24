@@ -147,6 +147,70 @@ class Voluntario {
             return ['error' => $e->getMessage()];
         }
     }
+
+    public function actualizarPerfil($voluntarioId, $datos) {
+        try {
+            error_log("Iniciando actualización de perfil para voluntario ID: " . $voluntarioId);
+            error_log("Datos recibidos: " . print_r($datos, true));
+
+            $sql = "EXEC sp_ActualizarMiPerfil 
+                    @VoluntarioID = :voluntarioId,
+                    @TelefonoCelular = :telefonoCelular,
+                    @TelefonoParticular = :telefonoParticular,
+                    @TelefonoTrabajo = :telefonoTrabajo,
+                    @OcupacionActual = :ocupacionActual,
+                    @EmpresaLabora = :empresaLabora,
+                    @Calle = :calle,
+                    @NumeroExterior = :numeroExterior,
+                    @Colonia = :colonia,
+                    @CodigoPostal = :codigoPostal";
+
+            $stmt = $this->pdo->prepare($sql);
+            
+            // Bindear los parámetros
+            $stmt->bindParam(':voluntarioId', $voluntarioId, PDO::PARAM_INT);
+            $stmt->bindParam(':telefonoCelular', $datos['telefonoCelular']);
+            $stmt->bindParam(':telefonoParticular', $datos['telefonoParticular']);
+            $stmt->bindParam(':telefonoTrabajo', $datos['telefonoTrabajo']);
+            $stmt->bindParam(':ocupacionActual', $datos['ocupacionActual']);
+            $stmt->bindParam(':empresaLabora', $datos['empresaLabora']);
+            $stmt->bindParam(':calle', $datos['calle']);
+            $stmt->bindParam(':numeroExterior', $datos['numeroExterior']);
+            $stmt->bindParam(':colonia', $datos['colonia']);
+            $stmt->bindParam(':codigoPostal', $datos['codigoPostal']);
+
+            $stmt->execute();
+            $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            error_log("Resultado de la actualización: " . print_r($resultado, true));
+
+            if ($resultado === false) {
+                return [
+                    'success' => true,
+                    'message' => 'Perfil actualizado exitosamente'
+                ];
+            }
+
+            return [
+                'success' => true,
+                'message' => 'Perfil actualizado exitosamente',
+                'data' => $resultado
+            ];
+
+        } catch (PDOException $e) {
+            error_log("Error PDO en actualizarPerfil: " . $e->getMessage());
+            return [
+                'success' => false,
+                'message' => 'Error al actualizar el perfil: ' . $e->getMessage()
+            ];
+        } catch (Exception $e) {
+            error_log("Error general en actualizarPerfil: " . $e->getMessage());
+            return [
+                'success' => false,
+                'message' => 'Error inesperado al actualizar el perfil'
+            ];
+        }
+    }
 }
 ?>
 

@@ -1,0 +1,408 @@
+[23-Oct-2025 19:04:45 UTC] Iniciando solicitud de actualización de perfil
+[23-Oct-2025 19:04:45 UTC] Datos recibidos: {"email":"emanuel@gmail.com","telefonoCelular":"9612327084","telefonoParticular":"9612327085","telefonoTrabajo":"9612327085","enfermedades":"ninguna","alergias":"ninguna","gradoEstudios":"Bachillerato","profesion":"bachillerato","ocupacionActual":"Desempleado","empresaLabora":"NINGUNA"}
+[23-Oct-2025 19:04:45 UTC] Datos decodificados: Array
+(
+    [email] => emanuel@gmail.com
+    [telefonoCelular] => 9612327084
+    [telefonoParticular] => 9612327085
+    [telefonoTrabajo] => 9612327085
+    [enfermedades] => ninguna
+    [alergias] => ninguna
+    [gradoEstudios] => Bachillerato
+    [profesion] => bachillerato
+    [ocupacionActual] => Desempleado
+    [empresaLabora] => NINGUNA
+)
+
+[23-Oct-2025 19:04:45 UTC] Error al actualizar perfil: SQLSTATE[42000]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Email is not a parameter for procedure sp_ActualizarPerfilVoluntario.
+[23-Oct-2025 19:04:45 UTC] Error al actualizar el perfil: actualización falló
+[23-Oct-2025 19:14:16 UTC] Iniciando solicitud de actualización de perfil
+[23-Oct-2025 19:14:16 UTC] Datos recibidos: {"telefonoCelular":"9611230800","telefonoParticular":"9612327085","telefonoTrabajo":"9612327085","calle":"14 de septiembre","numeroExterior":"0","numeroInterior":"","colonia":"La Victoria","codigoPostal":"29010","enfermedades":"ninguna","alergias":"ninguna","gradoEstudios":"Bachillerato","profesion":"bachillerato","ocupacionActual":"Desempleado","empresaLabora":"NINGUNA"}
+[23-Oct-2025 19:14:16 UTC] Datos decodificados: Array
+(
+    [telefonoCelular] => 9611230800
+    [telefonoParticular] => 9612327085
+    [telefonoTrabajo] => 9612327085
+    [calle] => 14 de septiembre
+    [numeroExterior] => 0
+    [numeroInterior] => 
+    [colonia] => La Victoria
+    [codigoPostal] => 29010
+    [enfermedades] => ninguna
+    [alergias] => ninguna
+    [gradoEstudios] => Bachillerato
+    [profesion] => bachillerato
+    [ocupacionActual] => Desempleado
+    [empresaLabora] => NINGUNA
+)
+
+[23-Oct-2025 19:14:16 UTC] Iniciando actualización de perfil para voluntarioID: 6
+[23-Oct-2025 19:14:16 UTC] Datos recibidos: Array
+(
+    [telefonoCelular] => 9611230800
+    [telefonoParticular] => 9612327085
+    [telefonoTrabajo] => 9612327085
+    [calle] => 14 de septiembre
+    [numeroExterior] => 0
+    [numeroInterior] => 
+    [colonia] => La Victoria
+    [codigoPostal] => 29010
+    [enfermedades] => ninguna
+    [alergias] => ninguna
+    [gradoEstudios] => Bachillerato
+    [profesion] => bachillerato
+    [ocupacionActual] => Desempleado
+    [empresaLabora] => NINGUNA
+)
+
+[23-Oct-2025 19:14:16 UTC] Resultado de la ejecución: exitoso
+[23-Oct-2025 19:14:16 UTC] Perfil actualizado exitosamente para el voluntario ID: 6
+[23-Oct-2025 19:15:33 UTC] Iniciando solicitud de actualización de perfil
+[23-Oct-2025 19:15:33 UTC] Datos recibidos: {"telefonoCelular":"9611230800","telefonoParticular":"9612327085","telefonoTrabajo":"9612327085","calle":"14 de septiembre","numeroExterior":"1","numeroInterior":"","colonia":"La Victoria","codigoPostal":"29010","enfermedades":"ASMA","alergias":"ninguna","gradoEstudios":"Bachillerato","profesion":"bachillerato","ocupacionActual":"Desempleado","empresaLabora":"NINGUNA"}
+[23-Oct-2025 19:15:33 UTC] Datos decodificados: Array
+(
+    [telefonoCelular] => 9611230800
+    [telefonoParticular] => 9612327085
+    [telefonoTrabajo] => 9612327085
+    [calle] => 14 de septiembre
+    [numeroExterior] => 1
+    [numeroInterior] => 
+    [colonia] => La Victoria
+    [codigoPostal] => 29010
+    [enfermedades] => ASMA
+    [alergias] => ninguna
+    [gradoEstudios] => Bachillerato
+    [profesion] => bachillerato
+    [ocupacionActual] => Desempleado
+    [empresaLabora] => NINGUNA
+)
+
+[23-Oct-2025 19:15:34 UTC] Iniciando actualización de perfil para voluntarioID: 6
+[23-Oct-2025 19:15:34 UTC] Datos recibidos: Array
+(
+    [telefonoCelular] => 9611230800
+    [telefonoParticular] => 9612327085
+    [telefonoTrabajo] => 9612327085
+    [calle] => 14 de septiembre
+    [numeroExterior] => 1
+    [numeroInterior] => 
+    [colonia] => La Victoria
+    [codigoPostal] => 29010
+    [enfermedades] => ASMA
+    [alergias] => ninguna
+    [gradoEstudios] => Bachillerato
+    [profesion] => bachillerato
+    [ocupacionActual] => Desempleado
+    [empresaLabora] => NINGUNA
+)
+
+[23-Oct-2025 19:15:34 UTC] Resultado de la ejecución: exitoso
+[23-Oct-2025 19:15:34 UTC] Perfil actualizado exitosamente para el voluntario ID: 6
+[23-Oct-2025 19:19:03 UTC] Iniciando solicitud de actualización de perfil
+[23-Oct-2025 19:19:03 UTC] Datos recibidos: {"telefonoCelular":"9612327085","telefonoParticular":"9612327085","telefonoTrabajo":"9612327085","calle":"14 de septiembre","numeroExterior":"1","numeroInterior":"","colonia":"La Victoria","codigoPostal":"29010","enfermedades":"ASMA","alergias":"ninguna","gradoEstudios":"Bachillerato","profesion":"bachillerato","ocupacionActual":"Desempleado","empresaLabora":"NINGUNA"}
+[23-Oct-2025 19:19:03 UTC] Datos decodificados: Array
+(
+    [telefonoCelular] => 9612327085
+    [telefonoParticular] => 9612327085
+    [telefonoTrabajo] => 9612327085
+    [calle] => 14 de septiembre
+    [numeroExterior] => 1
+    [numeroInterior] => 
+    [colonia] => La Victoria
+    [codigoPostal] => 29010
+    [enfermedades] => ASMA
+    [alergias] => ninguna
+    [gradoEstudios] => Bachillerato
+    [profesion] => bachillerato
+    [ocupacionActual] => Desempleado
+    [empresaLabora] => NINGUNA
+)
+
+[23-Oct-2025 19:19:03 UTC] Iniciando actualización de perfil para voluntarioID: 6
+[23-Oct-2025 19:19:03 UTC] Perfil actualizado exitosamente para el voluntario ID: 6
+[23-Oct-2025 19:41:46 UTC] Iniciando solicitud de actualización de perfil
+[23-Oct-2025 19:41:46 UTC] Datos recibidos: {"telefonoCelular":"9191010101","telefonoParticular":"1019191919","telefonoTrabajo":"","calle":"14 de septiembre","numeroExterior":"0","numeroInterior":"","colonia":"la victoria","codigoPostal":"29010","enfermedades":"asma","alergias":"ninguna","gradoEstudios":"bachillerato","profesion":"estudiante","ocupacionActual":"ninguna","empresaLabora":"ninguna"}
+[23-Oct-2025 19:41:46 UTC] Datos decodificados: Array
+(
+    [telefonoCelular] => 9191010101
+    [telefonoParticular] => 1019191919
+    [telefonoTrabajo] => 
+    [calle] => 14 de septiembre
+    [numeroExterior] => 0
+    [numeroInterior] => 
+    [colonia] => la victoria
+    [codigoPostal] => 29010
+    [enfermedades] => asma
+    [alergias] => ninguna
+    [gradoEstudios] => bachillerato
+    [profesion] => estudiante
+    [ocupacionActual] => ninguna
+    [empresaLabora] => ninguna
+)
+
+[23-Oct-2025 19:41:46 UTC] Iniciando actualización de perfil para voluntarioID: 6
+[23-Oct-2025 19:41:46 UTC] Perfil actualizado exitosamente para el voluntario ID: 6
+[23-Oct-2025 19:42:01 UTC] Iniciando solicitud de actualización de perfil
+[23-Oct-2025 19:42:01 UTC] Datos recibidos: {"telefonoCelular":"9191010101","telefonoParticular":"1019191919","telefonoTrabajo":"","calle":"14 de septiembre","numeroExterior":"0","numeroInterior":"","colonia":"la victoria","codigoPostal":"29010","enfermedades":"asma","alergias":"ninguna","gradoEstudios":"bachillerato","profesion":"estudiante","ocupacionActual":"ninguna","empresaLabora":"ninguna"}
+[23-Oct-2025 19:42:01 UTC] Datos decodificados: Array
+(
+    [telefonoCelular] => 9191010101
+    [telefonoParticular] => 1019191919
+    [telefonoTrabajo] => 
+    [calle] => 14 de septiembre
+    [numeroExterior] => 0
+    [numeroInterior] => 
+    [colonia] => la victoria
+    [codigoPostal] => 29010
+    [enfermedades] => asma
+    [alergias] => ninguna
+    [gradoEstudios] => bachillerato
+    [profesion] => estudiante
+    [ocupacionActual] => ninguna
+    [empresaLabora] => ninguna
+)
+
+[23-Oct-2025 19:42:01 UTC] Iniciando actualización de perfil para voluntarioID: 6
+[23-Oct-2025 19:42:01 UTC] Perfil actualizado exitosamente para el voluntario ID: 6
+[23-Oct-2025 19:44:37 UTC] Iniciando solicitud de actualización de perfil
+[23-Oct-2025 19:44:37 UTC] Datos recibidos raw: {"telefonoCelular":"9611230800","telefonoParticular":"29010","telefonoTrabajo":"29010","calle":"29010","numeroExterior":"29010","numeroInterior":"29010","colonia":"29010","codigoPostal":"29010","enfermedades":"29010","alergias":"29010","gradoEstudios":"29010","profesion":"29010","ocupacionActual":"29010","empresaLabora":"29010"}
+[23-Oct-2025 19:44:37 UTC] Datos decodificados exitosamente: Array
+(
+    [telefonoCelular] => 9611230800
+    [telefonoParticular] => 29010
+    [telefonoTrabajo] => 29010
+    [calle] => 29010
+    [numeroExterior] => 29010
+    [numeroInterior] => 29010
+    [colonia] => 29010
+    [codigoPostal] => 29010
+    [enfermedades] => 29010
+    [alergias] => 29010
+    [gradoEstudios] => 29010
+    [profesion] => 29010
+    [ocupacionActual] => 29010
+    [empresaLabora] => 29010
+)
+
+[23-Oct-2025 19:44:37 UTC] Datos filtrados: Array
+(
+    [telefonoCelular] => 9611230800
+    [telefonoParticular] => 29010
+    [telefonoTrabajo] => 29010
+    [calle] => 29010
+    [numeroExterior] => 29010
+    [numeroInterior] => 29010
+    [colonia] => 29010
+    [codigoPostal] => 29010
+    [enfermedades] => 29010
+    [alergias] => 29010
+    [gradoEstudios] => 29010
+    [profesion] => 29010
+    [ocupacionActual] => 29010
+    [empresaLabora] => 29010
+)
+
+[23-Oct-2025 19:44:37 UTC] Iniciando actualización de perfil para voluntarioID: 6
+[23-Oct-2025 19:44:37 UTC] Perfil actualizado exitosamente para el voluntario ID: 6
+[23-Oct-2025 19:48:08 UTC] Iniciando solicitud de actualización de perfil
+[23-Oct-2025 19:48:08 UTC] Datos recibidos raw: {"telefonoCelular":"9611230800","telefonoParticular":"29010","telefonoTrabajo":"29010","calle":"29010","numeroExterior":"29010","numeroInterior":"29010","colonia":"29010","codigoPostal":"29010","enfermedades":"29010","alergias":"29010","gradoEstudios":"29010","profesion":"29010","ocupacionActual":"29010","empresaLabora":"29010"}
+[23-Oct-2025 19:48:08 UTC] Datos decodificados exitosamente: Array
+(
+    [telefonoCelular] => 9611230800
+    [telefonoParticular] => 29010
+    [telefonoTrabajo] => 29010
+    [calle] => 29010
+    [numeroExterior] => 29010
+    [numeroInterior] => 29010
+    [colonia] => 29010
+    [codigoPostal] => 29010
+    [enfermedades] => 29010
+    [alergias] => 29010
+    [gradoEstudios] => 29010
+    [profesion] => 29010
+    [ocupacionActual] => 29010
+    [empresaLabora] => 29010
+)
+
+[23-Oct-2025 19:48:08 UTC] Datos filtrados: Array
+(
+    [telefonoCelular] => 9611230800
+    [telefonoParticular] => 29010
+    [telefonoTrabajo] => 29010
+    [calle] => 29010
+    [numeroExterior] => 29010
+    [numeroInterior] => 29010
+    [colonia] => 29010
+    [codigoPostal] => 29010
+    [enfermedades] => 29010
+    [alergias] => 29010
+    [gradoEstudios] => 29010
+    [profesion] => 29010
+    [ocupacionActual] => 29010
+    [empresaLabora] => 29010
+)
+
+[23-Oct-2025 19:48:08 UTC] Iniciando actualización de perfil para voluntarioID: 6
+[23-Oct-2025 19:48:08 UTC] Perfil actualizado exitosamente para el voluntario ID: 6
+[23-Oct-2025 19:55:53 UTC] Iniciando solicitud de actualización de perfil
+[23-Oct-2025 19:55:53 UTC] Datos recibidos raw: {"telefonoCelular":"961-232-70-85","telefonoParticular":"961-555-0606","telefonoTrabajo":"961-555-0707","calle":"Boulevard Belisario Domínguez","numeroExterior":"1234","numeroInterior":"","colonia":"Jardines de Tuxtla","codigoPostal":"29020","enfermedades":"Ninguna conocida","alergias":"Látex","gradoEstudios":"Maestría en Salud Pública","profesion":"Enfermera","ocupacionActual":"Enfermera Jefe de Piso","empresaLabora":"Hospital General"}
+[23-Oct-2025 19:55:53 UTC] Datos decodificados exitosamente: Array
+(
+    [telefonoCelular] => 961-232-70-85
+    [telefonoParticular] => 961-555-0606
+    [telefonoTrabajo] => 961-555-0707
+    [calle] => Boulevard Belisario Domínguez
+    [numeroExterior] => 1234
+    [numeroInterior] => 
+    [colonia] => Jardines de Tuxtla
+    [codigoPostal] => 29020
+    [enfermedades] => Ninguna conocida
+    [alergias] => Látex
+    [gradoEstudios] => Maestría en Salud Pública
+    [profesion] => Enfermera
+    [ocupacionActual] => Enfermera Jefe de Piso
+    [empresaLabora] => Hospital General
+)
+
+[23-Oct-2025 19:55:53 UTC] PHP Warning:  Undefined variable $datosRecibidos in C:\wamp64\www\ProyectoSGV\controllers\actualizar_perfil.php on line 88
+[23-Oct-2025 19:55:53 UTC] PHP Stack trace:
+[23-Oct-2025 19:55:53 UTC] PHP   1. {main}() C:\wamp64\www\ProyectoSGV\controllers\actualizar_perfil.php:0
+[23-Oct-2025 19:55:53 UTC] PHP Fatal error:  Uncaught TypeError: array_intersect_key(): Argument #1 ($array) must be of type array, null given in C:\wamp64\www\ProyectoSGV\controllers\actualizar_perfil.php:87
+Stack trace:
+#0 C:\wamp64\www\ProyectoSGV\controllers\actualizar_perfil.php(87): array_intersect_key(NULL, Array)
+#1 {main}
+  thrown in C:\wamp64\www\ProyectoSGV\controllers\actualizar_perfil.php on line 87
+[23-Oct-2025 19:58:18 UTC] Iniciando solicitud de actualización de perfil
+[23-Oct-2025 19:58:18 UTC] Datos recibidos raw: {"telefonoCelular":"961-555-2222","telefonoParticular":"961-555-0606","telefonoTrabajo":"961-555-0707","calle":"Boulevard Belisario Domínguez","numeroExterior":"1234","numeroInterior":"","colonia":"Jardines de Tuxtla","codigoPostal":"29020","enfermedades":"Ninguna conocida","alergias":"Látex","gradoEstudios":"Maestría en Salud Pública","profesion":"Enfermera","ocupacionActual":"Enfermera Jefe de Piso","empresaLabora":"Hospital General"}
+[23-Oct-2025 19:58:18 UTC] Datos decodificados exitosamente: Array
+(
+    [telefonoCelular] => 961-555-2222
+    [telefonoParticular] => 961-555-0606
+    [telefonoTrabajo] => 961-555-0707
+    [calle] => Boulevard Belisario Domínguez
+    [numeroExterior] => 1234
+    [numeroInterior] => 
+    [colonia] => Jardines de Tuxtla
+    [codigoPostal] => 29020
+    [enfermedades] => Ninguna conocida
+    [alergias] => Látex
+    [gradoEstudios] => Maestría en Salud Pública
+    [profesion] => Enfermera
+    [ocupacionActual] => Enfermera Jefe de Piso
+    [empresaLabora] => Hospital General
+)
+
+[23-Oct-2025 19:58:18 UTC] PHP Warning:  Undefined variable $datosRecibidos in C:\wamp64\www\ProyectoSGV\controllers\actualizar_perfil.php on line 88
+[23-Oct-2025 19:58:18 UTC] PHP Stack trace:
+[23-Oct-2025 19:58:18 UTC] PHP   1. {main}() C:\wamp64\www\ProyectoSGV\controllers\actualizar_perfil.php:0
+[23-Oct-2025 19:58:18 UTC] PHP Fatal error:  Uncaught TypeError: array_intersect_key(): Argument #1 ($array) must be of type array, null given in C:\wamp64\www\ProyectoSGV\controllers\actualizar_perfil.php:87
+Stack trace:
+#0 C:\wamp64\www\ProyectoSGV\controllers\actualizar_perfil.php(87): array_intersect_key(NULL, Array)
+#1 {main}
+  thrown in C:\wamp64\www\ProyectoSGV\controllers\actualizar_perfil.php on line 87
+[23-Oct-2025 21:25:55 UTC] Iniciando solicitud de actualización de perfil
+[23-Oct-2025 21:25:55 UTC] Datos recibidos raw: {"telefonoCelular":"961-555-0505","telefonoParticular":"961-555-0606","telefonoTrabajo":"961-555-0707","calle":"Boulevard Belisario Domínguez","numeroExterior":"1234","numeroInterior":"","colonia":"Jardines de Tuxtla","codigoPostal":"29020","enfermedades":"Ninguna conocida","alergias":"Látex","gradoEstudios":"Maestría en Salud Pública","profesion":"Enfermera","ocupacionActual":"Enfermera Jefe de Piso","empresaLabora":"Hospital General"}
+[23-Oct-2025 21:25:55 UTC] Datos decodificados exitosamente: Array
+(
+    [telefonoCelular] => 961-555-0505
+    [telefonoParticular] => 961-555-0606
+    [telefonoTrabajo] => 961-555-0707
+    [calle] => Boulevard Belisario Domínguez
+    [numeroExterior] => 1234
+    [numeroInterior] => 
+    [colonia] => Jardines de Tuxtla
+    [codigoPostal] => 29020
+    [enfermedades] => Ninguna conocida
+    [alergias] => Látex
+    [gradoEstudios] => Maestría en Salud Pública
+    [profesion] => Enfermera
+    [ocupacionActual] => Enfermera Jefe de Piso
+    [empresaLabora] => Hospital General
+)
+
+[23-Oct-2025 21:25:55 UTC] PHP Warning:  Undefined variable $datosRecibidos in C:\wamp64\www\ProyectoSGV\controllers\actualizar_perfil.php on line 88
+[23-Oct-2025 21:25:55 UTC] PHP Stack trace:
+[23-Oct-2025 21:25:55 UTC] PHP   1. {main}() C:\wamp64\www\ProyectoSGV\controllers\actualizar_perfil.php:0
+[23-Oct-2025 21:25:55 UTC] PHP Fatal error:  Uncaught TypeError: array_intersect_key(): Argument #1 ($array) must be of type array, null given in C:\wamp64\www\ProyectoSGV\controllers\actualizar_perfil.php:87
+Stack trace:
+#0 C:\wamp64\www\ProyectoSGV\controllers\actualizar_perfil.php(87): array_intersect_key(NULL, Array)
+#1 {main}
+  thrown in C:\wamp64\www\ProyectoSGV\controllers\actualizar_perfil.php on line 87
+[23-Oct-2025 21:28:27 UTC] Iniciando solicitud de actualización de perfil
+[23-Oct-2025 21:28:27 UTC] Datos recibidos raw: {"telefonoCelular":"961-555-0505","telefonoParticular":"961-555-0606","telefonoTrabajo":"961-555-0707","calle":"Boulevard Belisario Domínguez","numeroExterior":"1234","numeroInterior":"","colonia":"Jardines de Tuxtla","codigoPostal":"29020","enfermedades":"ninguna","alergias":"Látex","gradoEstudios":"Maestría en Salud Pública","profesion":"Enfermera","ocupacionActual":"Enfermera Jefe de Piso","empresaLabora":"Hospital General"}
+[23-Oct-2025 21:28:27 UTC] Datos decodificados exitosamente: Array
+(
+    [telefonoCelular] => 961-555-0505
+    [telefonoParticular] => 961-555-0606
+    [telefonoTrabajo] => 961-555-0707
+    [calle] => Boulevard Belisario Domínguez
+    [numeroExterior] => 1234
+    [numeroInterior] => 
+    [colonia] => Jardines de Tuxtla
+    [codigoPostal] => 29020
+    [enfermedades] => ninguna
+    [alergias] => Látex
+    [gradoEstudios] => Maestría en Salud Pública
+    [profesion] => Enfermera
+    [ocupacionActual] => Enfermera Jefe de Piso
+    [empresaLabora] => Hospital General
+)
+
+[23-Oct-2025 21:28:27 UTC] Iniciando actualización de perfil para voluntarioID: 3
+[23-Oct-2025 21:28:27 UTC] Perfil actualizado exitosamente para el voluntario ID: 3
+[23-Oct-2025 21:29:15 UTC] Iniciando solicitud de actualización de perfil
+[23-Oct-2025 21:29:15 UTC] Datos recibidos raw: {"telefonoCelular":"96111111","telefonoParticular":"961-555-0606","telefonoTrabajo":"961-555-0707","calle":"Boulevard Belisario Domínguez","numeroExterior":"1234","numeroInterior":"","colonia":"Jardines de Tuxtla","codigoPostal":"29020","enfermedades":"ninguna","alergias":"Látex","gradoEstudios":"Maestría en Salud Pública","profesion":"Enfermera","ocupacionActual":"Enfermera Jefe de Piso","empresaLabora":"Hospital General"}
+[23-Oct-2025 21:29:15 UTC] Datos decodificados exitosamente: Array
+(
+    [telefonoCelular] => 96111111
+    [telefonoParticular] => 961-555-0606
+    [telefonoTrabajo] => 961-555-0707
+    [calle] => Boulevard Belisario Domínguez
+    [numeroExterior] => 1234
+    [numeroInterior] => 
+    [colonia] => Jardines de Tuxtla
+    [codigoPostal] => 29020
+    [enfermedades] => ninguna
+    [alergias] => Látex
+    [gradoEstudios] => Maestría en Salud Pública
+    [profesion] => Enfermera
+    [ocupacionActual] => Enfermera Jefe de Piso
+    [empresaLabora] => Hospital General
+)
+
+[23-Oct-2025 21:29:15 UTC] Iniciando actualización de perfil para voluntarioID: 3
+[23-Oct-2025 21:29:16 UTC] Perfil actualizado exitosamente para el voluntario ID: 3
+[23-Oct-2025 22:03:18 UTC] Iniciando solicitud de actualización de perfil
+[23-Oct-2025 22:03:18 UTC] Estado de la sesión en actualizar_perfil: Array
+(
+    [user] => Array
+        (
+            [id] => 6
+            [nombre] => emanuel
+            [rol] => Voluntario
+        )
+
+    [voluntarioId] => 6
+)
+
+[23-Oct-2025 22:03:18 UTC] Datos recibidos raw: {"telefonoCelular":"9611230800","telefonoParticular":"29010","telefonoTrabajo":"29010","calle":"29010","numeroExterior":"29010","numeroInterior":"29010","colonia":"29010","codigoPostal":"29010","enfermedades":"29010","alergias":"29010","gradoEstudios":"29010","profesion":"29010","ocupacionActual":"29010","empresaLabora":"29010"}
+[23-Oct-2025 22:03:18 UTC] Datos decodificados exitosamente: Array
+(
+    [telefonoCelular] => 9611230800
+    [telefonoParticular] => 29010
+    [telefonoTrabajo] => 29010
+    [calle] => 29010
+    [numeroExterior] => 29010
+    [numeroInterior] => 29010
+    [colonia] => 29010
+    [codigoPostal] => 29010
+    [enfermedades] => 29010
+    [alergias] => 29010
+    [gradoEstudios] => 29010
+    [profesion] => 29010
+    [ocupacionActual] => 29010
+    [empresaLabora] => 29010
+)
+
+[23-Oct-2025 22:03:18 UTC] Iniciando actualización de perfil para voluntarioID: 6
+[23-Oct-2025 22:03:18 UTC] Perfil actualizado exitosamente para el voluntario ID: 6

@@ -1,0 +1,167 @@
+<?php
+// /models/Voluntario.php
+
+require_once __DIR__ . '/../config/Database.php';
+
+class Voluntario {
+    private $pdo;
+
+    public function __construct() {
+        $this->pdo = Database::getInstance()->getConnection();
+    }
+
+    /**
+     * Obtiene el perfil completo del voluntario, incluyendo datos relacionados
+     * de múltiples conjuntos de resultados.
+     * @param int $voluntarioId
+     * @return array|false Un array con todos los datos o false si hay un error.
+     */
+    public function obtenerPerfil($voluntarioId) {
+        try {
+            // Se usa el nombre del parámetro como en el SP, aunque PDO también funciona con '?'
+            $sql = "EXEC sp_ObtenerPerfilCompletoVoluntario @VoluntarioID = :voluntarioId";
+            $stmt = $this->pdo->prepare($sql);
+
+            // Importante: Es mejor usar PARAM_INT para IDs numéricos.
+            $stmt->bindParam(':voluntarioId', $voluntarioId, PDO::PARAM_INT);
+            
+            $stmt->execute();
+            
+            $resultado = [];
+
+            // 1. Obtener el primer conjunto de resultados (datos principales del perfil)
+            $perfil = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            // Si el perfil no existe, no hay necesidad de seguir.
+            if (!$perfil) {
+                return false;
+            }
+
+            // Asegurarse de que no haya valores NULL en el perfil
+            $resultado['perfil'] = array_map(function($valor) {
+                return $valor === null ? '' : $valor;
+            }, $perfil);
+
+            // 2. Avanzar al siguiente conjunto de resultados (contactos de emergencia)
+            $stmt->nextRowset();
+            $contactos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $resultado['contactos'] = array_map(function($contacto) {
+                return array_map(function($valor) {
+                    return $valor === null ? '' : $valor;
+                }, $contacto);
+            }, $contactos);
+
+            // 3. Avanzar al último conjunto de resultados (disponibilidad)
+            $stmt->nextRowset();
+            $disponibilidad = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $resultado['disponibilidad'] = array_map(function($disp) {
+                return array_map(function($valor) {
+                    return $valor === null ? '' : $valor;
+                }, $disp);
+            }, $disponibilidad);
+
+            return $resultado;
+
+        } catch (PDOException $e) {
+            // Es una buena práctica registrar el error para depuración.
+            error_log("Error al obtener perfil completo: " . $e->getMessage());
+            return false;
+        }
+    }
+
+    /**
+     * Actualiza los datos del perfil del voluntario
+     * @param int $voluntarioId ID del voluntario
+     * @param array $datos Datos del perfil a actualizar
+     * @return array Resultado de la operación con 'success' y 'message'
+     */
+    public function actualizarPerfil($voluntarioId, $datos) {
+        try {
+            error_log("Iniciando actualización de perfil para voluntarioID: " . $voluntarioId);
+            
+            // Validar datos requeridos
+            if (!isset($datos['telefonoCelular']) || trim($datos['telefonoCelular']) === '') {
+                return [
+                    'success' => false,
+                    'message' => "El teléfono celular es requerido"
+                ];
+            }
+
+            $sql = "EXEC sp_ActualizarMiPerfil 
+                    @VoluntarioID = :voluntarioId,
+                    @TelefonoCelular = :telefonoCelular,
+                    @TelefonoParticular = :telefonoParticular,
+                    @TelefonoTrabajo = :telefonoTrabajo,
+                    @OcupacionActual = :ocupacionActual,
+                    @EmpresaLabora = :empresaLabora,
+                    @Calle = :calle,
+                    @NumeroExterior = :numeroExterior,
+                    @Colonia = :colonia,
+                    @CodigoPostal = :codigoPostal";
+
+            $stmt = $this->pdo->prepare($sql);
+            
+            // Vincular parámetros con validación
+            $stmt->bindParam(':voluntarioId', $voluntarioId, PDO::PARAM_INT);
+            
+            // Lista de campos permitidos para actualización
+            $camposPermitidos = [
+                'telefonoCelular',
+                'telefonoParticular',
+                'telefonoTrabajo',
+                'ocupacionActual',
+                'empresaLabora',
+                'calle',
+                'numeroExterior',
+                'colonia',
+                'codigoPostal'
+            ];
+            
+            // Inicializar variables antes de bindParam
+            $valores = [];
+            foreach ($camposPermitidos as $campo) {
+                $valores[$campo] = isset($datos[$campo]) && $datos[$campo] !== '' ? 
+                                 trim($datos[$campo]) : null;
+            }
+            
+            // Vincular parámetros
+            foreach ($camposPermitidos as $campo) {
+                $stmt->bindParam(':' . $campo, $valores[$campo]);
+            }
+
+            // Ejecutar la actualización
+            if (!$stmt->execute()) {
+                $errorInfo = $stmt->errorInfo();
+                error_log("Error SQL: " . print_r($errorInfo, true));
+                return [
+                    'success' => false,
+                    'message' => "Error al actualizar el perfil: " . ($errorInfo[2] ?? 'Error desconocido')
+                ];
+            }
+
+            // Verificar si se afectaron filas
+            $filasAfectadas = $stmt->rowCount();
+            if ($filasAfectadas === 0) {
+                return [
+                    'success' => false,
+                    'message' => "No se realizaron cambios en el perfil"
+                ];
+            }
+
+            return [
+                'success' => true,
+                'message' => "Perfil actualizado exitosamente"
+            ];
+
+        } catch (PDOException $e) {
+            error_log("Error al actualizar perfil: " . $e->getMessage());
+            error_log("Stack trace: " . $e->getTraceAsString());
+            
+            return [
+                'success' => false,
+                'message' => "Error en el servidor: " . $e->getMessage()
+            ];
+        }
+    }
+}
+?>
